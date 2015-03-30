@@ -1,6 +1,7 @@
 Ext.define('recruiting.view.Main', {
     extend: 'Ext.form.Panel',
     xtype: 'main',
+    id: 'mainView',
     requires: [
         'Ext.TitleBar',
         'Ext.Button',
@@ -40,15 +41,19 @@ Ext.define('recruiting.view.Main', {
         		padding: '50px',
         		width: '300px',
         		text: 'Recruitment',
+        		action: 'recruit'
         	}
-        ]
-    },
-    
-    listeners: [
-    	{
-    		delegate: '#recruitBtn',
-    		event: 'tap',
-    		fn: 'onRecruitTap'
-    	}
-    ]
+        ],
+        
+        listeners: [
+	    	{
+	    		delegate: '#recruitBtn',
+	    		event: 'tap',
+	    		fn: 'onRecruitTap'
+	    	}
+    	]
+   },
+   onRecruitTap: function (button, e, options) {
+        console.log('tappy tap tap');
+    }
 });

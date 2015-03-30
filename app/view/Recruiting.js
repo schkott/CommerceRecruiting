@@ -1,5 +1,6 @@
 Ext.define('recruiting.view.Recruiting', {
 	extend: 'Ext.form.Panel',
+	id: 'recrutingView',
 	requires: [
 		'Ext.form.FieldSet',
 	],

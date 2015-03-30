@@ -22,6 +22,10 @@ Ext.application({
         'Recruiting'
     ],
     
+    controllers: [
+    	'Main'
+    ],
+    
     icon: {
         '57': 'resources/icons/Icon.png',
         '72': 'resources/icons/Icon~ipad.png',
@@ -39,13 +43,14 @@ Ext.application({
         '1536x2008': 'resources/startup/1536x2008.png',
         '1496x2048': 'resources/startup/1496x2048.png'
     },
-
+    
     launch: function() {
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the main view
         Ext.Viewport.add(Ext.create('recruiting.view.Main'));
+        //Ext.viewport.add(Ext.create('recruiting.view.Recruiting'));
     },
 
     onUpdated: function() {
