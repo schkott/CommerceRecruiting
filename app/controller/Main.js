@@ -6,7 +6,7 @@ Ext.define('recruiting.controller.Main', {
             mainView: "mainView"
         },
         control: {
-            recruitBtn: {
+            'button[itemId=recruitBtn]': {
             	tap: "onRecruitTap"
             }
         }
@@ -15,6 +15,7 @@ Ext.define('recruiting.controller.Main', {
     //called when the Application is launched, remove if not needed
     onRecruitTap: function () {
     	console.log("shit got tapped bruh");
+    	Ext.viewport.setActiveItem('recruitingView')
     	//this.fireEvent("recruitMode", this);
     },
     
@@ -26,11 +27,6 @@ Ext.define('recruiting.controller.Main', {
     init: function () {
         this.callParent();
         console.log("init");
-       	this.control({
-            'button[action=recruit]': {
-                tap: this.onRecruitTap
-            },
-        });
     }
 
 });

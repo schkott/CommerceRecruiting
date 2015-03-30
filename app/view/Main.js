@@ -1,59 +1,49 @@
 Ext.define('recruiting.view.Main', {
-    extend: 'Ext.form.Panel',
-    xtype: 'main',
-    id: 'mainView',
-    requires: [
-        'Ext.TitleBar',
-        'Ext.Button',
-        'Ext.Img'
-    ],
-    
-    config: {
-        title: 'Login',
-        layout: {
-        	type: 'vbox',
-        	pack: 'center',
-        	align: 'center',
-        },
-        
-        items: [
-        	{
-        		xtype: 'titlebar',
-        		docked: 'top',
-        		title: 'Commerce Bank College Recruiting',
-        	},
-        	{
-        		xtype: 'button',
-        		itemId: 'adminBtn',
-        		ui: 'action',
-        		padding: '50px',
-        		width: '300px',
-        		text: 'Administrator',
-        	},
-        	{
-        		xtype: 'component',
-        		height: 30
-        	},
-        	{
-        		xtype: 'button',
-        		itemId: 'recruitBtn',
-        		ui: 'action',
-        		padding: '50px',
-        		width: '300px',
-        		text: 'Recruitment',
-        		action: 'recruit'
-        	}
-        ],
-        
-        listeners: [
-	    	{
-	    		delegate: '#recruitBtn',
-	    		event: 'tap',
-	    		fn: 'onRecruitTap'
-	    	}
-    	]
-   },
-   onRecruitTap: function (button, e, options) {
-        console.log('tappy tap tap');
-    }
-});
+			extend: 'Ext.form.Panel',
+			xtype: 'maintabs',
+			
+			requires: [
+				'Ext.TitleBar',
+				'Ext.TabPanel',
+				'Ext.field.Email',
+				'Ext.field.DatePicker',
+				'Ext.Button',
+				'Ext.Img'
+			],
+			
+			config : {
+				layout : {
+					type : 'fit'
+				},
+				items : [
+				{
+					xtype : 'titlebar',
+					docked : 'top',
+					title : 'Commerce Bank College Recruiting'
+				},{
+					xtype: 'tabpanel',
+					layout: {
+						animation: 'slide',
+						type: 'card'
+					},
+					items: [
+						{
+							xtype: 'recruit-tab',
+						},
+						{
+							xtype: 'container',
+							title: 'Admin',
+							iconCls: 'settings',
+							html: 'adminview'
+						},
+					],
+					tabBar: {
+						docked: 'bottom',
+						layout: {
+							pack: 'center',
+							type: 'hbox'
+						}
+					}
+				}]
+			}
+		});
