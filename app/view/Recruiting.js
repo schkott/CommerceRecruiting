@@ -1,10 +1,12 @@
 Ext.define('recruiting.view.Recruiting', {
-	extend: 'Ext.Container',
+	extend: 'Ext.form.Panel',
 	xtype: 'recruit-tab',
+	
 	requires: [
-		'Ext.form.FieldSet',
+		'Ext.form.FieldSet'
 	],
 	config: {
+		id: 'form',
 		title: 'Recruiting',
 		iconCls: 'user',
 		layout: {
@@ -22,27 +24,35 @@ Ext.define('recruiting.view.Recruiting', {
 				items: [
 					{
 						xtype: 'textfield',
-						name: 'fullName',
+						name: 'name',
 						label: 'Name',
 						required: true,
+						placeHolder: 'First and last name, please.'
 					},
 					{
 						xtype: 'textfield',
 						name: 'address',
 						label: 'Address',
 						required: true,
+						placeHolder: 'Your current address.'
 					},
 					{
-						xtype: 'textfield',
+						xtype: 'numberfield',
 						name: 'phone',
 						label: 'Phone Number',
+						component: {
+							xtype: 'input',
+							type: 'tel'
+						},
 						required: true,
+						placeHolder: '5558675309'
 					},
 					{
 						xtype: 'emailfield',
 						name: 'email',
 						label: 'Email',
 						required: true,
+						placeHolder: 'example@example.com'
 					},
 					{
 						//format the datepicker!
@@ -60,7 +70,7 @@ Ext.define('recruiting.view.Recruiting', {
 								height: '45%'
 							},
 						name: 'gradDate',
-						label: 'Graduation Date',
+						label: 'Expected Graduation Date',
 						required: true,
 					},
 					{
@@ -68,6 +78,7 @@ Ext.define('recruiting.view.Recruiting', {
 						name: 'position',
 						label: 'Position Interested In',
 						required: true,
+						placeHolder: 'What position are you applying for?'
 					}
 				]
 			},
@@ -80,6 +91,6 @@ Ext.define('recruiting.view.Recruiting', {
         		text: 'Submit',
         	}
 		]
-	}
+	},
 });
 

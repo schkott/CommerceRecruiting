@@ -15,7 +15,11 @@ Ext.application({
     requires: [
         'Ext.MessageBox'
     ],
-
+	
+    models: [
+    	'Recruit'
+    ],
+    
     views: [
         'Main',
         //'Admin',
@@ -23,7 +27,8 @@ Ext.application({
     ],
     
     controllers: [
-    	'Main'
+    	'Main',
+    	'Recruiting'
     ],
     
     icon: {
