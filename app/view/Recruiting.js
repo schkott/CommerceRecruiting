@@ -3,7 +3,8 @@ Ext.define('recruiting.view.Recruiting', {
 	xtype: 'recruit-tab',
 	
 	requires: [
-		'Ext.form.FieldSet'
+		'Ext.form.FieldSet',
+		'Ext.field.Number'
 	],
 	config: {
 		id: 'form',

@@ -59,7 +59,11 @@ Ext.define('recruiting.model.Recruit', {
 					type : 'email',
 					field : 'email',
 					message : 'Email: Format is invalid.'
-				}, {
+				},{
+					type : 'presence',
+					field : 'gradDate',
+					message : 'Your estimated graduation date is required.'
+				},{
 					type : 'presence',
 					field: 'position',
 					message: 'Position: Tell us which position you\'re interested in!'

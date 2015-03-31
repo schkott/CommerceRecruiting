@@ -27,7 +27,6 @@ Ext.application({
     ],
     
     controllers: [
-    	'Main',
     	'Recruiting'
     ],
     
