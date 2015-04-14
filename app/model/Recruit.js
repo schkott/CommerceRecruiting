@@ -2,10 +2,11 @@ Ext.define('recruiting.model.Recruit', {
 	extend : 'Ext.data.Model',
 	alias : 'model.Recruit',
 	config : {
+		identifier: {
+			type: 'uuid',
+			isUnique: true
+		},
 		fields : [{
-					name : 'id',
-					type : 'int'
-				}, {
 					name : 'name',
 					type : 'auto'
 				}, {

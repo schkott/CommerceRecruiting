@@ -92,6 +92,6 @@ Ext.define('recruiting.view.Recruiting', {
         		text: 'Submit',
         	}
 		]
-	},
+	}
 });
 

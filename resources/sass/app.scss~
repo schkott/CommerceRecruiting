@@ -3,6 +3,7 @@
 // is already included in your app.json file).
 @import 'sencha-touch/default';
 @import 'sencha-touch/default/all';
+@import 'plugins/numpadIOS';
 
 // Custom code goes here..
 

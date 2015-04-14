@@ -22,12 +22,19 @@ Ext.application({
     
     views: [
         'Main',
-        //'Admin',
+        'AdminTabs',
+        'Admin',
+        'PIN',
         'Recruiting'
     ],
     
     controllers: [
-    	'Recruiting'
+    	'Recruiting',
+    	'Admin'
+    ],
+    
+    stores: [
+    	'RecruitStore'
     ],
     
     icon: {

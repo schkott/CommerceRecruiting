@@ -8,7 +8,8 @@ Ext.define('recruiting.view.Main', {
 				'Ext.field.Email',
 				'Ext.field.DatePicker',
 				'Ext.Button',
-				'Ext.Img'
+				'Ext.Img',
+				'Ext.field.PatternPassword'
 			],
 			
 			config : {
@@ -28,14 +29,11 @@ Ext.define('recruiting.view.Main', {
 					},
 					items: [
 						{
-							xtype: 'recruit-tab',
+							xtype: 'recruit-tab'
 						},
 						{
-							xtype: 'container',
-							title: 'Admin',
-							iconCls: 'settings',
-							html: 'adminview'
-						},
+							xtype: 'admin-tabs'
+						}
 					],
 					tabBar: {
 						docked: 'bottom',

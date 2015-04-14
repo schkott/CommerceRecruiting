@@ -17,9 +17,9 @@ Ext.define('recruiting.controller.Recruiting', {
     },
     
     onSubmitTap: function(button, e, options) {
-    	console.log('onSubmitTap from controller');
+//    	console.log('onSubmitTap from controller');
 		var formData = this.getForm().getValues();
-		console.log(formData); //for debugging
+//		console.log(formData); //for debugging
 		
 		var recruit = Ext.create('recruiting.model.Recruit', {
 			name: formData.name,
@@ -39,7 +39,12 @@ Ext.define('recruiting.controller.Recruiting', {
 			});
 			Ext.Msg.alert('Something\'s wrong...', msg);
 		} else {
-			Ext.Msg.alert('Success!', 'The form looks valid.');
+			var recruitStore = Ext.getStore('recruitStore');
+			recruitStore.add(recruit);
+			recruitStore.sync();
+			Ext.Msg.alert('Success!', 'Your data has been saved.');
+			this.getForm().reset();
+			
 		}
     }
 });

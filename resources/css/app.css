@@ -7611,3 +7611,9 @@ body.x-desktop {
 .x-grid .x-grid-summaryrow .x-grid-cell {
   border-color: #C0C0C0;
 }
+
+.pin-field{
+	text-align: center;
+	font-size: 130%;
+	letter-spacing: 10px;
+}
