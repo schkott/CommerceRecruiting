@@ -61,6 +61,7 @@ Ext.application({
 
         // Initialize the main view
         Ext.Viewport.add(Ext.create('recruiting.view.Main'));
+        Ext.create('recruiting.store.RecruitStore');
         //Ext.viewport.add(Ext.create('recruiting.view.Recruiting'));
     },
 

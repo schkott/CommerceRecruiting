@@ -1,12 +1,13 @@
 Ext.define('recruiting.view.Recruiting', {
 	extend: 'Ext.form.Panel',
-	xtype: 'recruit-tab',
+	xtype: 'RecruitTab',
 	
 	requires: [
 		'Ext.form.FieldSet',
 		'Ext.field.Number'
 	],
 	config: {
+		scrollable: false,
 		id: 'form',
 		title: 'Recruiting',
 		iconCls: 'user',
@@ -22,6 +23,9 @@ Ext.define('recruiting.view.Recruiting', {
 				width: '85%',
 				title: 'About You',
 				instructions: 'Tell us about you so we can keep in touch!',
+				style: { 
+						'margin-top': '7%',
+					},
 				items: [
 					{
 						xtype: 'textfield',

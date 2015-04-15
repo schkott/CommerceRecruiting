@@ -1,20 +1,25 @@
 Ext.define('recruiting.view.AdminTabs', {
-	extend: 'Ext.form.Panel',
-	xtype: 'admin-tabs',
+	extend: 'Ext.NavigationView',
+	xtype: 'AdminTabs',
+	
+	require: ['Ext.List'],
 	
 	config: {
-		id: 'cards',
+		id: 'AdminTabs',
 		title: 'Admin',
 		iconCls: 'settings',
-		layout: 'card',
+		navigationBar: false,
+		layout: {
+			animation: 'slide',
+			type:'card',
+		},
 		
 		items: [
 	        {
-	            xtype: 'PIN'
+	            xtype: 'Admin'
 	        },
 	        {
-	            html : 'Admin Stuff',
-	            id: 'adminpanel'
+	            xtype: 'PIN'
 	        }
     	]
 	},

@@ -69,6 +69,5 @@ Ext.define('recruiting.model.Recruit', {
 					field: 'position',
 					message: 'Position: Tell us which position you\'re interested in!'
 				}]
-	}
-	,
+	},
 });

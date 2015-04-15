@@ -5,10 +5,7 @@ Ext.define('recruiting.view.PIN', {
 	requires: ['Ext.field.PatternPassword'],
 	
 	config: {
-//		id: 'cards',
-//		title: 'Admin',
-//		iconCls: 'settings',
-//		layout: 'card',
+		scrollable: false,
 		layout: {
 			type: 'vbox',
 			align: 'center',
@@ -23,6 +20,7 @@ Ext.define('recruiting.view.PIN', {
 				items: [
 					{
 						xtype: 'patternpasswordfield',
+						id: 'pinfield',
 						labelAlign: 'top',
 						fieldStyle: 'text-align: center',
 						inputCls: 'pin-field'

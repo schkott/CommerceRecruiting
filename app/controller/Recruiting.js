@@ -39,7 +39,7 @@ Ext.define('recruiting.controller.Recruiting', {
 			});
 			Ext.Msg.alert('Something\'s wrong...', msg);
 		} else {
-			var recruitStore = Ext.getStore('recruitStore');
+			var recruitStore = Ext.getStore('recruits');
 			recruitStore.add(recruit);
 			recruitStore.sync();
 			Ext.Msg.alert('Success!', 'Your data has been saved.');

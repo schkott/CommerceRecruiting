@@ -4,11 +4,14 @@ Ext.define('recruiting.controller.Admin', {
 	config: {
 		views: [
 			'recruiting.view.PIN',
-			'recruiting.view.Admin'
+			'recruiting.view.Admin',
+			'recruiting.view.AdminTabs'
 		],
 		refs: {
-			cards: '#cards',
+			adminTabs: '#AdminTabs',
+			admin: '#Admin',
 			PIN: '#PIN',
+			pinField: '#pinfield',
 			submit: 'button#pin-submit'
 		},
 		control: {
@@ -19,7 +22,13 @@ Ext.define('recruiting.controller.Admin', {
 	},
 	
 	onUnlockTap: function(button, e, options) {
-		console.log('onUnlockTap from controller');
-//		Ext.Viewport.setActiveItem();
+//		var pin = this.getPinField();
+//		if(pin.getValue() == '666666') {
+//			this.getAdminTabs().pop();
+//		} else {
+//			pin.setValue('');
+//			Ext.Msg.alert('Invalid PIN.');
+//		}
+		this.getAdminTabs().pop();
 	}
 });

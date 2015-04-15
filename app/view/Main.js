@@ -9,12 +9,15 @@ Ext.define('recruiting.view.Main', {
 				'Ext.field.DatePicker',
 				'Ext.Button',
 				'Ext.Img',
-				'Ext.field.PatternPassword'
+				'Ext.field.PatternPassword',
+				'Ext.data.proxy.LocalStorage'
 			],
 			
 			config : {
+				scrollable: false,
 				layout : {
-					type : 'fit'
+					type : 'fit',
+					
 				},
 				items : [
 				{
@@ -29,10 +32,10 @@ Ext.define('recruiting.view.Main', {
 					},
 					items: [
 						{
-							xtype: 'recruit-tab'
+							xtype: 'RecruitTab'
 						},
 						{
-							xtype: 'admin-tabs'
+							xtype: 'AdminTabs'
 						}
 					],
 					tabBar: {
