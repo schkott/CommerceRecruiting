@@ -20,7 +20,7 @@ Ext.define('recruiting.model.Recruit', {
 					type : 'auto'
 				}, {
 					name : 'gradDate',
-					type : 'auto'
+					type : 'Date'
 				}, {
 					name : 'position',
 					type : 'auto'

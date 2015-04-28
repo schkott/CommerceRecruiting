@@ -5,6 +5,7 @@ Ext.define('recruiting.view.PIN', {
 	requires: ['Ext.field.PatternPassword'],
 	
 	config: {
+		id: 'PIN',
 		scrollable: false,
 		layout: {
 			type: 'vbox',

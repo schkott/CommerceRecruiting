@@ -44,7 +44,6 @@ Ext.define('recruiting.controller.Recruiting', {
 			recruitStore.sync();
 			Ext.Msg.alert('Success!', 'Your data has been saved.');
 			this.getForm().reset();
-			
 		}
     }
 });

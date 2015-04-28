@@ -10,13 +10,34 @@ Ext.define('recruiting.controller.Admin', {
 		refs: {
 			adminTabs: '#AdminTabs',
 			admin: '#Admin',
+			recruitList: '#recruitList',
+			recruitEdit: '#recruitEdit',
 			PIN: '#PIN',
 			pinField: '#pinfield',
-			submit: 'button#pin-submit'
+			unlock: 'button#pin-submit',
+			lock: 'button#lock',
+			updateRecruit: 'button#update-recruit',
+			deleteRecruit: 'button#delete-recruit',
+			submitRecruits: 'button#data-submit'
 		},
 		control: {
-			'submit': {
+			'unlock': {
 				tap: 'onUnlockTap'
+			},
+			'lock': {
+				tap: 'onLockTap'
+			},
+			'recruitList': {
+				itemtap: 'showRecruit',
+			},
+			'updateRecruit': {
+				tap: 'updateRecruit'
+			},
+			'deleteRecruit': {
+				tap: 'deleteRecruit'
+			},
+			'submitRecruits': {
+				tap: 'submitRecruits'
 			}
 		},
 	},
@@ -30,5 +51,39 @@ Ext.define('recruiting.controller.Admin', {
 //			Ext.Msg.alert('Invalid PIN.');
 //		}
 		this.getAdminTabs().pop();
+	},
+	
+	onLockTap: function(button, e, options) {
+		this.getAdminTabs().push({xtype:'PIN'});
+	},
+	
+	showRecruit: function(index, target, record, e, eOpts){
+		fields = this.getRecruitEdit();
+		fields.setRecord(record.getRecord());
+	},
+	
+	updateRecruit: function() {
+		record = this.getRecruitEdit().getRecord();
+		store = this.getRecruitList().getStore();
+		Ext.Msg.confirm('Save', 'Overwrite this record\'s data?', function(btn){
+   		if(btn === 'yes') {
+   			fields.updateRecord(record);
+			store.sync();
+   		}});
+	},
+	
+	deleteRecruit: function() {
+  	 	store = this.getRecruitList().getStore();
+		id = this.getRecruitList().getSelection()[0].internalId;
+		record = this.getRecruitList().getStore().findRecord('id', id);
+		Ext.Msg.confirm('Delete', 'Really delete this record?', function(btn){
+   		if(btn === 'yes') {
+			store.remove(record);
+			store.sync();
+   		}});
+	},
+	
+	submitRecruits: function() {
+		console.log('submitrecruits');
 	}
 });
