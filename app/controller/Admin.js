@@ -43,14 +43,13 @@ Ext.define('recruiting.controller.Admin', {
 	},
 	
 	onUnlockTap: function(button, e, options) {
-//		var pin = this.getPinField();
-//		if(pin.getValue() == '666666') {
-//			this.getAdminTabs().pop();
-//		} else {
-//			pin.setValue('');
-//			Ext.Msg.alert('Invalid PIN.');
-//		}
-		this.getAdminTabs().pop();
+		var pin = this.getPinField();
+		if(pin.getValue() == '666666') {
+			this.getAdminTabs().pop();
+		} else {
+			pin.setValue('');
+			Ext.Msg.alert('Invalid PIN.');
+		}
 	},
 	
 	onLockTap: function(button, e, options) {
@@ -84,6 +83,20 @@ Ext.define('recruiting.controller.Admin', {
 	},
 	
 	submitRecruits: function() {
-		console.log('submitrecruits');
+		var fail = false;
+		var count = 0;
+		external = Ext.getStore('external');
+		recruits = this.getRecruitList().getStore(); //if you don't reference the recruit store through the list, it won't refresh.
+		recruits.each(function (record) {
+			if(external.add(record.copy()).length == 0) fail = true; //if the array returned by add() is empty then the operation has failed and the data won't be synced.
+		});
+		if (!fail) {
+			recruits.removeAll();
+			recruits.sync();
+			external.sync();
+			this.getRecruitList().refresh();
+			Ext.Msg.alert('Success!', 'All recruit records successfully submitted.');
+			this.getRecruitEdit().reset();
+		}
 	}
 });

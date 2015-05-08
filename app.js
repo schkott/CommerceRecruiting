@@ -34,7 +34,8 @@ Ext.application({
     ],
     
     stores: [
-    	'RecruitStore'
+    	'RecruitStore',
+    	'ExternalStore'
     ],
     
     icon: {

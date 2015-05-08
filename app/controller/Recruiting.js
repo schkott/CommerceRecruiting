@@ -17,9 +17,7 @@ Ext.define('recruiting.controller.Recruiting', {
     },
     
     onSubmitTap: function(button, e, options) {
-//    	console.log('onSubmitTap from controller');
 		var formData = this.getForm().getValues();
-//		console.log(formData); //for debugging
 		
 		var recruit = Ext.create('recruiting.model.Recruit', {
 			name: formData.name,
